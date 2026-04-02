@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>技术支持 · 骰子狂飙：深渊觉醒</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #0d0f1a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1a1d35 0%, #0d0f1a 100%);
+      border-bottom: 1px solid #2a2d4a;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    header .logo-icon {
+      font-size: 2.4rem;
+      filter: drop-shadow(0 0 10px #7b5cff);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a78bff, #7b5cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      color: #8888aa;
+      margin-top: 4px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 60px 24px 40px;
+      background: radial-gradient(ellipse at 50% 0%, #1e1545 0%, transparent 70%);
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .hero h2 span {
+      background: linear-gradient(90deg, #a78bff, #5c9eff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: #9999bb;
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Cards ── */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 0 24px 60px;
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .card {
+      background: #141629;
+      border: 1px solid #252843;
+      border-radius: 16px;
+      padding: 28px 28px 24px;
+      flex: 1 1 260px;
+      max-width: 300px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      border-color: #7b5cff;
+      box-shadow: 0 0 20px rgba(123, 92, 255, 0.15);
+    }
+
+    .card .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ccc;
+      margin-bottom: 8px;
+    }
+
+    .card a,
+    .card .value {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #a78bff;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .card a:hover {
+      color: #c4aaff;
+      text-decoration: underline;
+    }
+
+    .card .note {
+      font-size: 0.8rem;
+      color: #666880;
+      margin-top: 8px;
+    }
+
+    /* ── Hours badge ── */
+    .hours-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #1e2040;
+      border: 1px solid #2e3060;
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      color: #9999cc;
+      margin: 0 auto 40px;
+    }
+
+    .hours-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 6px #4ade80;
+    }
+
+    /* ── Notice ── */
+    .notice {
+      max-width: 860px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+
+    .notice-box {
+      background: #12142a;
+      border: 1px solid #252843;
+      border-left: 4px solid #7b5cff;
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+
+    .notice-box h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #a78bff;
+      margin-bottom: 10px;
+    }
+
+    .notice-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .notice-box li {
+      font-size: 0.88rem;
+      color: #8888aa;
+      padding: 4px 0;
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .notice-box li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #7b5cff;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid #1e2040;
+      font-size: 0.78rem;
+      color: #44446a;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-icon">🎲</div>
+    <div>
+      <h1>骰子狂飙：深渊觉醒</h1>
+      <p>官方技术支持中心</p>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h2>遇到问题？<span>我们来帮你！</span></h2>
+    <p>如在游戏中遇到任何技术问题、账号问题或其他疑问，请通过以下方式联系我们。</p>
+  </div>
+
+  <div style="text-align:center; margin-bottom: 20px;">
+    <span class="hours-badge">
+      <span class="dot"></span>
+      服务时间：工作日 08:00 – 17:00
+    </span>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">📧</div>
+      <h3>电子邮件</h3>
+      <a href="mailto:bluesonli@163.com">bluesonli@163.com</a>
+      <p class="note">发送邮件后，我们将在 1–2 个工作日内回复。</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💬</div>
+      <h3>QQ 联系</h3>
+      <span class="value">778252084</span>
+      <p class="note">加好友时请备注"游戏技术支持"，工作时间内在线。</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⏰</div>
+      <h3>服务时间</h3>
+      <span class="value">工作日 08:00 – 17:00</span>
+      <p class="note">法定节假日暂停服务，假期结束后恢复。</p>
+    </div>
+
+  </div>
+
+  <div class="notice">
+    <div class="notice-box">
+      <h3>📋 联系我们前，请准备以下信息</h3>
+      <ul>
+        <li>游戏账号 ID 或用户名</li>
+        <li>问题发生的时间及具体描述</li>
+        <li>设备型号与操作系统版本</li>
+        <li>如有截图或日志，请一并附上，便于我们快速定位问题</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 骰子狂飙：深渊觉醒 · 保留所有权利
+  </footer>
+
+</body>
+</html>
